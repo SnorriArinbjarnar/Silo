@@ -12,7 +12,7 @@ function Header(){
                             <span class="primary-heading">Vönduð Jarðvinna</span>
                             <span class="secondary-heading">Áratuga reynsla</span>
                         </h1>
-                        <a href="#" class=" btn btn-lg btn-success mb-5">Fá Tilboð</a>
+                        <a href="#contact" class=" btn btn-lg btn-success mb-5">Fá Tilboð</a>
                     </div>
                 </div>
             </div>

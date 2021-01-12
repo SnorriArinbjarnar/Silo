@@ -5,7 +5,7 @@ function Navbar() {
     return (
 <nav class="navbar navbar-expand-md navbar-light bg-white sticky-top ">
       <div class="container-fluid">
-        <a href="#" class="navbar-brand">
+        <a href="/#" class="navbar-brand">
           LOGO
         </a>
         <div class="navigation-part ">
@@ -21,7 +21,7 @@ function Navbar() {
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a href="#" class="nav-link">Heim</a>
+              <a href="/#" class="nav-link">Heim</a>
             </li>
             <li class="nav-item">
               <a href="#about" class="nav-link">Um okkur</a>
