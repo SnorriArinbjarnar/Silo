@@ -13,7 +13,7 @@ function Footer() {
             </p>
             </div>
             <div class="social">
-                <a class="btn-floating btn-lg btn-fb" type="button" role="button"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn-floating btn-lg btn-fb" href="https://www.facebook.com/Gröfu-og-jarðvinnuþjónusta-Síló-113866570381886" type="button" role="button"><i class="fab fa-facebook-f"></i></a>
             </div>
       </footer>
     );

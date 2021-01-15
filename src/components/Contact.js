@@ -1,20 +1,43 @@
 import React from 'react';
+import emailjs, { init } from 'emailjs-com';
+
+
 
 function Contact(){
+
+    function sendEmail(e){
+        e.preventDefault();
+        const gmailService = process.env.REACT_APP_EMAILJS_SERVICEID;
+        const templateID = process.env.REACT_APP_EMAILJS_TEMPLATEID;
+        const userID = process.env.REACT_APP_EMAILJS_USERID;
+        init(userID);
+
+        
+        emailjs.sendForm(gmailService, templateID, e.target, userID)
+                .then((result) => {
+                    console.log(result.text);
+                }, error => {
+                    console.log(error.text);
+                });
+    }
+
+
+
     return (
         <section class="contact-us container-fluid mb-4 p-4 " id="contact">
             <div class="row justify-content-center">
                 <div class="col-9">
                     <h2 class="mb-3">Hafðu Samband</h2>
                     <hr />
-                    <form>
+                    <form onSubmit={sendEmail}>
                     <div class="form-group">
                         <label htmlFor="formGroupExampleInput">Nafn</label>
                         <input
                         type="text"
                         class="form-control"
                         id="formGroupExampleInput"
-                        placeholder="Example input"
+                        placeholder=""
+                        name="Nafn"
                         />
                     </div>
                     <div class="form-group">
@@ -23,7 +46,8 @@ function Contact(){
                         type="phone"
                         class="form-control"
                         id="formGroupExampleInput2"
-                        placeholder="Another input"
+                        placeholder=""
+                        name="Phone"
                         />
                     </div>
                     <div class="form-group">
@@ -32,20 +56,22 @@ function Contact(){
                         type="email"
                         class="form-control"
                         id="formGroupExampleInput2"
-                        placeholder="Another input"
+                        placeholder=""
+                        name="email"
                         />
                     </div>
+                    
                     <div class="form-group">
                         <label htmlFor="formGroupExampleInput2">Skilaboð</label>
                         <textarea
                         class="form-control"
-                        name=""
-                        id=""
+                        id="formGroupExampleInput2"
                         cols="30"
                         rows="10"
-                        ></textarea>
+                        name="message"
+                        />
                     </div>
-                    <button type="submit" class="btn btn-primary w-100">Submit</button>
+                    <button type="submit" class="btn btn-primary w-100">Senda</button>
                     </form>
                 </div>
             
