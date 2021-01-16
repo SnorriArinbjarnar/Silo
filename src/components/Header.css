@@ -1,5 +1,9 @@
+:root {
+  --header-bg: url("../assets/images/grafa2.jpeg");
+}
+
 .header {
-    background-image: url("../assets/images/grafa2.jpeg");
+    /*background-image: var(--header-bg);*/
     background-size: cover;
     background-position: center;
     /*background-attachment: fixed;*/
@@ -26,3 +30,14 @@
   
     font-size: 3rem;
   }
+
+  /*
+  https://graphql.contentful.com/content/v1/spaces/{SPACE}/explore?access_token={CDA_TOKEN}
+  space: 4une54jqe39k
+  space name: Silo
+
+  Content Delivery Api: 
+  ZiDgkxyPVLE1o4OENSKONHbvUYYx-DwJ8OaoWb5nB-0
+
+  https://graphql.contentful.com/content/v1/spaces/[YOUR_SPACE_ID]/explore?access_token=[YOUR_ACCESS_TOKEN]
+  */
