@@ -18,15 +18,15 @@ class Navbar extends Component {
 
   render(){
     const collapsed = this.state.collapsed;
-    const classOne = collapsed ? 'collapse navbar-collapse' : 'collapse navbar-collapse show';
+    const classOne = collapsed ? 'collapse navbar-collapse' : 'collapse navbar-collapse show ';
     const classTwo = collapsed ? 'navbar-toggler navbar-toggler-right collapsed' : 'navbar-toggler navbar-toggler-right';
     return (
       <nav class="navbar navbar-expand-md navbar-light bg-white sticky-top ">
-            <div class="container-fluid">
-              <a href="/#" class="navbar-brand">
+            <div class="container-fluid d-flex flex-xs-column  flex-md-row ">
+              {/*<a href="/#" class="navbar-brand">
                 LOGO
-              </a>
-              <div class="navigation-part ">
+              </a>*/}
+              <div class="navigation-part">
                   <button
                   className={`${classTwo}`}
                   type="button"
@@ -38,7 +38,7 @@ class Navbar extends Component {
                   </button>
     
               <div className={`${classOne}`} id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto  ">
                   <li class="nav-item active">
                     <a href="/#" class="nav-link">Heim</a>
                   </li>
@@ -56,12 +56,9 @@ class Navbar extends Component {
                 </ul>
               </div>
             </div>
-            <div class="phone-part text-primary p-2">
-    
+            <div class="phone-part text-primary p-2 ">
               <span >555-4567</span>
               <i class="fa fa-phone" aria-hidden="true"></i>
-    
-              
             </div>
           </div>
           
