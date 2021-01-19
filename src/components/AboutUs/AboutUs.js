@@ -1,51 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import AboutImage from './AboutImage';
 import './AboutUs.css';
 
-const query = `{
-    aboutUsCollection {
-        items {
-          aboutUsParagraph
-          aboutImagesCollection {
-            items {
-              fileName
-              url
-            }
-          }
-        }
-      }
-  }`
 
-function AboutUs(){
-    const [about, setAbout] = useState(null);
-    const apiURL = `https://graphql.contentful.com/content/v1/spaces/${process.env.REACT_APP_CONTENTFUL_SPACEID}/`;
-
-    useEffect(() => {
-        window 
-            .fetch(apiURL, {
-                method: 'POST',
-                headers: {
-                    "Content-Type" : "application/json",
-                    Authorization: `Bearer ${process.env.REACT_APP_CONTENTFUL_ACCESSTOKEN}`
-                },
-                body: JSON.stringify({query})
-            })
-            .then((response) => response.json())
-            .then(({data, errors}) => {
-                if(errors) {
-                    console.error(errors);
-                }
-
-                setAbout(data.aboutUsCollection.items[0])
-                
-            })
-    }, [apiURL])
-
-    if(!about){
-        
-        return "Loading...";
-    }
- 
+function AboutUs({about}){
+   
     return (
     <section class="test my-4" id="about">
         <div class ="container-fluid padding bg-light">
