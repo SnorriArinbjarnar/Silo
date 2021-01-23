@@ -21,12 +21,12 @@ class Navbar extends Component {
     const classOne = collapsed ? 'collapse navbar-collapse' : 'collapse navbar-collapse show ';
     const classTwo = collapsed ? 'navbar-toggler navbar-toggler-right collapsed' : 'navbar-toggler navbar-toggler-right';
     return (
-      <nav class="navbar navbar-expand-md navbar-light bg-white sticky-top ">
-            <div class="container-fluid d-flex flex-xs-column  flex-md-row ">
+      <nav className="navbar navbar-expand-md navbar-light bg-white sticky-top ">
+            <div className="container-fluid d-flex flex-xs-column  flex-md-row ">
               {/*<a href="/#" class="navbar-brand">
                 LOGO
               </a>*/}
-              <div class="navigation-part">
+              <div className="navigation-part">
                   <button
                   className={`${classTwo}`}
                   type="button"
@@ -34,31 +34,31 @@ class Navbar extends Component {
                   data-target="#navbarResponsive"
                   onClick={this.toogleNavbar}
                   >
-                  <span class="navbar-toggler-icon"></span>
+                  <span className="navbar-toggler-icon"></span>
                   </button>
     
               <div className={`${classOne}`} id="navbarResponsive">
-                <ul class="navbar-nav ml-auto  ">
-                  <li class="nav-item active">
-                    <a href="/#" class="nav-link">Heim</a>
+                <ul className="navbar-nav ml-auto  ">
+                  <li className="nav-item active">
+                    <a href="/#" className="nav-link">Heim</a>
                   </li>
-                  <li class="nav-item">
-                    <a href="#about" class="nav-link">Um okkur</a>
+                  <li className="nav-item">
+                    <a href="#about" className="nav-link">Um okkur</a>
                   </li>
-                  <li class="nav-item">
-                    <a href="#services" class="nav-link">Þjónusta</a>
+                  <li className="nav-item">
+                    <a href="#services" className="nav-link">Þjónusta</a>
                   </li>
                   
-                  <li class="nav-item">
-                    <a href="#contact" class="nav-link">Hafðu Samband</a>
+                  <li className="nav-item">
+                    <a href="#contact" className="nav-link">Hafðu Samband</a>
                   </li>
                   
                 </ul>
               </div>
             </div>
-            <div class="phone-part text-primary p-2 ">
-              <span >555-4567</span>
-              <i class="fa fa-phone" aria-hidden="true"></i>
+            <div className="phone-part text-primary p-2 ">
+              <span>893 3249</span>
+              <i className="fa fa-phone" aria-hidden="true"></i>
             </div>
           </div>
           

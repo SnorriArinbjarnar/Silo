@@ -6,14 +6,14 @@ import './AboutUs.css';
 function AboutUs({about}){
    
     return (
-    <section class="test my-4" id="about">
-        <div class ="container-fluid padding bg-light">
-            <div class="row about-us-2 text-center ">
-                <div class="col-12  text-dark">
-                    <h1 class=" display-4">Um Okkur</h1>
+    <section className="test my-4" id="about">
+        <div className ="container-fluid padding bg-light">
+            <div className="row about-us-2 text-center ">
+                <div className="col-12  text-dark">
+                    <h1 className=" display-4">Um Okkur</h1>
                 </div>
-                <div class="col-12 py-2">
-                    <p class="text-justify text-dark lead">
+                <div className="col-12 py-2">
+                    <p className="text-justify text-dark lead">
                         {about.aboutUsParagraph}  
                     </p>
                 </div>

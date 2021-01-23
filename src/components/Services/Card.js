@@ -2,15 +2,15 @@ import React from 'react';
 
 function Card(props) {
     return (
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-            <div class="card p-2 no-border ">
+        <div className="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+            <div className="card p-2 no-border ">
             <div>
-                <i class={props.icon}></i>
+                <i className={props.icon}></i>
             </div>
         
-            <div class="card-body">
-                <h5 class="card-title">{props.title}</h5>
-                <p class="card-text">
+            <div className="card-body">
+                <h5 className="card-title">{props.title}</h5>
+                <p className="card-text">
                     {props.text}
                 </p>
             </div>
