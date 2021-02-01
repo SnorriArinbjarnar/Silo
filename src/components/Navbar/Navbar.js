@@ -1,4 +1,5 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import './Navbar.css';
 //import {Link, NavLink} from 'react-router';
 
 class Navbar extends Component {
@@ -57,7 +58,7 @@ class Navbar extends Component {
               </div>
             </div>
             <div className="phone-part text-primary p-2 ">
-              <span>893 3249</span>
+              <a href="+8933249">893 3249</a>
               <i className="fa fa-phone" aria-hidden="true"></i>
             </div>
           </div>
