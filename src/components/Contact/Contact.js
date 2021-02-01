@@ -10,17 +10,21 @@ function Contact(){
         const gmailService = process.env.REACT_APP_EMAILJS_SERVICEID;
         const templateID = process.env.REACT_APP_EMAILJS_TEMPLATEID;
         const userID = process.env.REACT_APP_EMAILJS_USERID;
+        const emailForm = document.getElementById('email-form');
+
         init(userID);
 
         emailjs.sendForm(gmailService, templateID, e.target, userID)
                 .then(() => {
                     setSnackMessage("Tölvupóstur sendur...");
                     triggerSnackBar('snackbar');
+                    emailForm.reset();
                 }, () => {
                     setSnackMessage("Eitthvað fór úrskeiðis. Reyndu aftur síðar...");
                     triggerSnackBar('snackbar');
+                    emailForm.reset();
                 })
-                     
+                          
     }
 
     const triggerSnackBar = (snackBarId) => {
@@ -39,7 +43,7 @@ function Contact(){
                 <div className="col-9">
                     <h2 className="mb-3">Hafðu Samband</h2>
                     <hr />
-                    <form onSubmit={sendEmail}>
+                    <form onSubmit={sendEmail} id="email-form">
                     <div className="form-group">
                         <label htmlFor="formGroupExampleInput">Nafn</label>
                         <input
