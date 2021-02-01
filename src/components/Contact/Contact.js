@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
+import SnackBar from '../SnackBar/SnackBar';
 import emailjs, { init } from 'emailjs-com';
 
-
-
 function Contact(){
+    const [snackMessage, setSnackMessage] = useState("");
 
     function sendEmail(e){
         e.preventDefault();
@@ -12,19 +12,28 @@ function Contact(){
         const userID = process.env.REACT_APP_EMAILJS_USERID;
         init(userID);
 
-        
         emailjs.sendForm(gmailService, templateID, e.target, userID)
-                .then((result) => {
-                    console.log(result.text);
-                }, error => {
-                    console.log(error.text);
-                    
-                });
+                .then(() => {
+                    setSnackMessage("Tölvupóstur sendur...");
+                    triggerSnackBar('snackbar');
+                }, () => {
+                    setSnackMessage("Eitthvað fór úrskeiðis. Reyndu aftur síðar...");
+                    triggerSnackBar('snackbar');
+                })
+                     
     }
 
-
+    const triggerSnackBar = (snackBarId) => {
+        var bar = document.getElementById(snackBarId);
+        bar.className = "show";
+    
+        setTimeout(() => {
+          bar.className = bar.className.replace("show", "");
+        }, 3000);
+    }
 
     return (
+        <React.Fragment>
         <section className="contact-us container-fluid mb-4 p-4 " id="contact">
             <div className="row justify-content-center">
                 <div className="col-9">
@@ -73,11 +82,14 @@ function Contact(){
                         />
                     </div>
                     <button type="submit" className="btn btn-primary w-100">Senda</button>
+                    
                     </form>
                 </div>
-            
             </div>
+            
       </section>
+      <SnackBar message={snackMessage} />
+      </React.Fragment>
     );
 }
 

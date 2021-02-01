@@ -16,6 +16,8 @@
 #cache files
 .eslintcache
 
+#images, using cms
+/src/assets/images
 
 # misc
 .DS_Store
