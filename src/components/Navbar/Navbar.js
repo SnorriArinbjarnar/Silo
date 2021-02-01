@@ -58,7 +58,7 @@ class Navbar extends Component {
               </div>
             </div>
             <div className="phone-part text-primary p-2 ">
-              <a href="+8933249">893 3249</a>
+              <a href="tel:+8933249">893 3249</a>
               <i className="fa fa-phone" aria-hidden="true"></i>
             </div>
           </div>
