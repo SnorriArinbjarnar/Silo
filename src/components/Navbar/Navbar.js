@@ -6,6 +6,7 @@ class Navbar extends Component {
   constructor(props){
     super(props);
     this.toogleNavbar = this.toogleNavbar.bind(this);
+    //this.handleLinkClick = this.handleLinkClick.bind(this);
     this.state = {
       collapsed: true
     };
@@ -17,11 +18,15 @@ class Navbar extends Component {
     });
   }
 
+  
+
+
   render(){
     const collapsed = this.state.collapsed;
     const classOne = collapsed ? 'collapse navbar-collapse' : 'collapse navbar-collapse show ';
     const classTwo = collapsed ? 'navbar-toggler navbar-toggler-right collapsed' : 'navbar-toggler navbar-toggler-right';
     const classThree = collapsed ? 'container-fluid ' : 'container-fluid collapse-direction';
+
     return (
       <nav className="navbar navbar-expand-md navbar-light bg-white sticky-top ">
             <div className={classThree}>
@@ -42,17 +47,17 @@ class Navbar extends Component {
               <div className={`${classOne}`} id="navbarResponsive">
                 <ul className="navbar-nav ml-auto  ">
                   <li className="nav-item active">
-                    <a href="/#" className="nav-link">Heim</a>
+                    <a href="/#" className="nav-link" onClick={this.toogleNavbar}>Heim</a>
                   </li>
                   <li className="nav-item">
-                    <a href="#about" className="nav-link">Um okkur</a>
+                    <a href="#about" className="nav-link" onClick={this.toogleNavbar}>Um okkur</a>
                   </li>
                   <li className="nav-item">
-                    <a href="#services" className="nav-link">Þjónusta</a>
+                    <a href="#services" className="nav-link" onClick={this.toogleNavbar}>Þjónusta</a>
                   </li>
                   
                   <li className="nav-item">
-                    <a href="#contact" className="nav-link">Hafðu Samband</a>
+                    <a href="#contact" className="nav-link" onClick={this.toogleNavbar}>Hafðu Samband</a>
                   </li>
                   
                 </ul>
