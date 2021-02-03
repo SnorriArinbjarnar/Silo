@@ -21,9 +21,10 @@ class Navbar extends Component {
     const collapsed = this.state.collapsed;
     const classOne = collapsed ? 'collapse navbar-collapse' : 'collapse navbar-collapse show ';
     const classTwo = collapsed ? 'navbar-toggler navbar-toggler-right collapsed' : 'navbar-toggler navbar-toggler-right';
+    const classThree = collapsed ? 'container-fluid ' : 'container-fluid collapse-direction';
     return (
       <nav className="navbar navbar-expand-md navbar-light bg-white sticky-top ">
-            <div className="container-fluid d-flex flex-xs-column  flex-md-row ">
+            <div className={classThree}>
               {/*<a href="/#" class="navbar-brand">
                 LOGO
               </a>*/}
