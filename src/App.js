@@ -1,6 +1,6 @@
 
 import './App.css';
-import Navbar from './components/Navbar/Navbar';
+import NavbarHook from './components/Navbar/NavbarHook';
 import Header from './components/Header/Header';
 import Services from './components/Services/Services';
 import AboutUs from './components/AboutUs/AboutUs';
@@ -80,7 +80,7 @@ function App() {
 
   return (
     <div className="App">
-        <Navbar />
+        <NavbarHook />
         <main>
           <Header header={header}/>
           <Services />
