@@ -1,3 +1,12 @@
 .no-border {
+  /*border: 0;*/
   border: 0;
+}
+
+.scroll-hack {
+/* 
+  Preventing anchor from scrolling
+  too far when a link is clicked
+*/
+padding-top: 56px;
 }

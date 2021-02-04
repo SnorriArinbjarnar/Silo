@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import SnackBar from '../SnackBar/SnackBar';
 import emailjs, { init } from 'emailjs-com';
+import './contact.css'; 
 
 function Contact(){
     const [snackMessage, setSnackMessage] = useState("");
@@ -38,7 +39,7 @@ function Contact(){
 
     return (
         <React.Fragment>
-        <section className="contact-us container-fluid mb-4 p-4 " id="contact">
+        <section className="contact-us container-fluid mb-4 p-4 scroll-hack" id="contact">
             <div className="row justify-content-center">
                 <div className="col-9">
                     <h2 className="mb-3">Hafðu Samband</h2>

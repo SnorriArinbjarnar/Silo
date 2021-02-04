@@ -2,6 +2,10 @@
     padding-bottom: 2rem;
   }
 
+ .scroll-hack {
+   padding-top: 56px;
+ }
+
   .about-us-2 {
     width: 75%;
     margin: 0 auto;

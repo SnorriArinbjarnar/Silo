@@ -6,7 +6,7 @@ import './AboutUs.css';
 function AboutUs({about}){
    
     return (
-    <section className="test my-4" id="about">
+    <section className="test my-4 scroll-hack" id="about">
         <div className ="container-fluid padding bg-light">
             <div className="row about-us-2 text-center ">
                 <div className="col-12  text-dark">
