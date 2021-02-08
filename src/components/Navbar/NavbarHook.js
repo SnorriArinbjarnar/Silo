@@ -6,7 +6,7 @@ function Navbar(){
     const [show, setShow] = useState(false);
     const btn = useRef(null);
 
-    const toggleCollapse = useCallback(
+   const toggleCollapse = useCallback(
         () => setCollapsed(!collapsed),
         [collapsed, setCollapsed],
     )
@@ -14,18 +14,21 @@ function Navbar(){
     useEffect(() => {
         const {current} = btn;
         const isVisible = (window.getComputedStyle(current).getPropertyValue('display') !== 'none');
-        
         const setShowVar = (boolValue) => {
             setShow(boolValue);
         }
+        const handleResize = () => {
+            const isVisible = (window.getComputedStyle(current).getPropertyValue('display') !== 'none');
+            setShowVar(isVisible);
+        }
+        
         setShowVar(isVisible);
-
+        window.addEventListener('resize', handleResize);
     })
 
     const classOne = collapsed ? 'collapse navbar-collapse' : 'collapse navbar-collapse show ';
     const classTwo = collapsed ? 'navbar-toggler navbar-toggler-right collapsed' : 'navbar-toggler navbar-toggler-right';
-    const classThree = collapsed  ? 'container-fluid' : 'container-fluid collapse-direction';
-
+    const classThree = collapsed   ? 'container-fluid' : 'container-fluid collapse-direction';
 
     return (
         <nav className="navbar navbar-expand-md navbar-light bg-white sticky-top ">

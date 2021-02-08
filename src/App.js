@@ -6,6 +6,7 @@ import Services from './components/Services/Services';
 import AboutUs from './components/AboutUs/AboutUs';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
+import Spinner from './components/Spinner/Spinner';
 import {useState, useEffect} from 'react';
 
 const query = `{
@@ -44,7 +45,7 @@ const query = `{
 function App() {
   const [header, setHeader] = useState(null);
   const [about, setAbout] = useState(null);
-
+  
   const apiURL = `https://graphql.contentful.com/content/v1/spaces/${process.env.REACT_APP_CONTENTFUL_SPACEID}/`;
 
   useEffect(() => {
@@ -65,20 +66,15 @@ function App() {
 
             setAbout(data.aboutUsCollection.items[0]);
             setHeader(data.headerCollection.items[0]);
-            
         })
   }, [apiURL])
 
-  if(!about){
-      
-      return "Loading...";
-  }
-
-  if(!header){
-    return 'Loading...';
+  if(!header || !about){
+    return <Spinner />
   }
 
   return (
+    
     <div className="App">
         <NavbarHook />
         <main>
