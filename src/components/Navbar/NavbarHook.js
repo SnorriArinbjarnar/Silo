@@ -3,6 +3,7 @@ import './Navbar.css';
 
 function Navbar(){
     const [collapsed, setCollapsed] = useState(true);
+    const [windowWidth, setWidth] = useState(0);
     const [show, setShow] = useState(false);
     const btn = useRef(null);
 
@@ -23,6 +24,14 @@ function Navbar(){
         }
         
         setShowVar(isVisible);
+        //window.addEventListener('resize', handleResize);
+    }, [windowWidth])
+
+    useEffect(() => {
+        const handleResize = () => {
+            console.log(window.innerWidth);
+            setWidth(window.innerWidth);
+        }
         window.addEventListener('resize', handleResize);
     })
 
