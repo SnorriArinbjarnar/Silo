@@ -18,18 +18,12 @@ function Navbar(){
         const setShowVar = (boolValue) => {
             setShow(boolValue);
         }
-        const handleResize = () => {
-            const isVisible = (window.getComputedStyle(current).getPropertyValue('display') !== 'none');
-            setShowVar(isVisible);
-        }
-        
+
         setShowVar(isVisible);
-        //window.addEventListener('resize', handleResize);
     }, [windowWidth])
 
     useEffect(() => {
         const handleResize = () => {
-            console.log(window.innerWidth);
             setWidth(window.innerWidth);
         }
         window.addEventListener('resize', handleResize);
