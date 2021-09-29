@@ -36,7 +36,7 @@ function CardDeck() {
                 return <Card
                             key={item.id}
                             icon={item.icon}
-                            text={item.text}
+                            text=''
                             title={item.title}
                         />
                     })
